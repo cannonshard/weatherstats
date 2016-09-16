@@ -24,6 +24,14 @@ We should use consistent weather stations- preferably ones closer to the downtow
 Interestingly, Forecast.io (and others?) encode precipitation as a probabilistic value
 Maybe that means we can evaluate the efficacy of these predictions.
 
+Every day, 3 times a day, the data is collected for the 7- day forecast. This allows us to see what the accuracy is in advance in relation to day-of weather
+
+It is hypothesized then that data gets more accurate as it approaches the present.
+
+Results will be compared with historical data from nearby weather stations. Forecast.io has a time machine function which serves to fulfill this duty. Any gaps in forecast.io's API will be filled with a seperate (but local) weather station's data.
+
+Results are collected into sftp://tor.kousu.ca/~weatherstats/dataset/ and are scraped by a script.
+
 Code
 ====
 
@@ -48,6 +56,8 @@ $ python3
 
 This was the other one:
 https://github.com/ZeevG/python-forecast.io
+
+.lation files are used to access GPS locations for predictions.
 
 
 Current Design:
